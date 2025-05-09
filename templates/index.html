@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">Welcome to Andestie Gradebook</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Students</h5>
+                <p class="card-text">Manage student information and records</p>
+                <a href="/students" class="btn btn-primary">View Students</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Subjects</h5>
+                <p class="card-text">Manage subjects and course information</p>
+                <a href="/subjects" class="btn btn-primary">View Subjects</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Grades</h5>
+                <p class="card-text">Enter and manage student grades</p>
+                <a href="/grades" class="btn btn-primary">View Grades</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quick Actions</h5>
+                <div class="d-grid gap-2 d-md-flex">
+                    <a href="/students/add" class="btn btn-success me-md-2">Add New Student</a>
+                    <a href="/subjects/add" class="btn btn-success me-md-2">Add New Subject</a>
+                    <a href="/grades/add" class="btn btn-success">Add New Grade</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

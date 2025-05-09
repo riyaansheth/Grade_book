@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="mb-4">Performance Analytics</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Subject Averages</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Average Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for subject, avg in subject_avg.items() %}
+                            <tr>
+                                <td>{{ subject }}</td>
+                                <td>{{ "%.2f"|format(avg) }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Student Averages</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Average Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for student, avg in student_avg.items() %}
+                            <tr>
+                                <td>{{ student }}</td>
+                                <td>{{ "%.2f"|format(avg) }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Download Reports</h5>
+                <a href="/reports/students" class="btn btn-primary">Download Student Report (CSV)</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
